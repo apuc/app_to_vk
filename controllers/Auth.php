@@ -31,6 +31,11 @@ class Auth extends Controller
     }
 
     public function actionReg(){
+        $vk_id = $this->app->cookie->get('vk_id');
+        $user = new User();
+        $user->find()->where(['vk_id' => $vk_id])->one();
+        $user->status = ($_GET['status'] == 1) ? 2 : 1;
+        $user->save();
         $this->app->debug->prn($_GET);
     }
 

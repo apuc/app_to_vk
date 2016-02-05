@@ -12,6 +12,9 @@ class Office extends Controller
     public function actionMy(){
         $user = new User();
         $user->find()->where(['vk_id' => $this->app->cookie->get('vk_id')])->one();
+        $this->app->geo->ip = $this->app->routing->getRealIpAddr();
+        $geo = $this->app->geo->get_value();
+        $this->app->debug->prn($this->app->routing->getRealIpAddr());
         $this->app->parser->render('index', [
             'user' => $user
         ], true);
