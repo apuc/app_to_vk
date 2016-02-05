@@ -70,4 +70,23 @@ class Parser {
         }
     }
 
+    public function renderCode($tpl, $data = array(), $view = true){
+        if(!empty($data)){
+            foreach($data as $k => $v){
+                ${$k} = $v;
+            }
+        }
+        $app = $this->app;
+        ob_start();
+        include(ROOT_DIR . DOP_DIR . "/views/" . mb_strtolower($this->controller) . "/" . $tpl . ".php");
+        $a = ob_get_contents();
+        ob_end_clean();
+        if($view){
+            echo $a;
+        }
+        else {
+            return $a;
+        }
+    }
+
 } 
