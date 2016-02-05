@@ -71,6 +71,7 @@ class Geo {
     function get_geobase_data() {
         // получаем данные по ip
         $ch = curl_init('http://ipgeobase.ru:7020/geo?ip=' . $this->ip);
+        var_dump($ch);
         curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_TIMEOUT, 3);

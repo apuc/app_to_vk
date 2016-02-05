@@ -14,6 +14,7 @@ class Config
         'user' => 'root',
         'pass' => '',
         'db' => 'fw',
+        'charset' => 'utf8',
     ];
 
 }
