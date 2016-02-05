@@ -13,6 +13,7 @@ class Office extends Controller
         $user = new User();
         $user->find()->where(['vk_id' => $this->app->cookie->get('vk_id')])->one();
         $this->app->geo->ip = $this->app->routing->getRealIpAddr();
+        //echo $this->app->forms->dropDownList('hhh', 2, ['Яблоко', 'Груша', 'Gthcbr'],['class'=>'gvaefvsf','prompt'=>'Фрукты']);
         $geo = $this->app->geo->get_value();
         $this->app->debug->prn($this->app->routing->getRealIpAddr());
         $this->app->parser->render('index', [

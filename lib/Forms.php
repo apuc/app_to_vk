@@ -18,7 +18,7 @@ class Forms
                 $d .= "<option value='$k'>$v</option>";
             }
         }
-
+        unset ($options['prompt']);
         $op = '';
         if($options){
             foreach($options as $k => $v){

@@ -14,5 +14,5 @@
     </nav>
 </div>
 <div class="content">
-
+<?= $this->app->forms->dropDownList('hhh', 2, ['Яблоко', 'Груша', 'Gthcbr'],['class'=>'gvaefvsf','prompt'=>'Фрукты']); ?>
 </div>
