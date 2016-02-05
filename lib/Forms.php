@@ -7,7 +7,7 @@ class Forms
     public function dropDownList($name, $selected, $data, $options = false){
         $d = '';
         if($options['prompt']){
-            $d .= "<option selected >".$options['prompt']."</option>";
+            $d .= "<option>".$options['prompt']."</option>";
         }
         foreach($data as $k => $v){
 
