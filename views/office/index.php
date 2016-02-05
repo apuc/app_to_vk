@@ -3,7 +3,7 @@
         <div class="ava-name-img">
             <img src="<?= $user->photo ?>" alt="">
         </div>
-        <a href="#"><?=$user->name?></a>
+        <a href="#"><?= $user->name ?></a>
     </div>
     <nav class="main-menu">
         <ul>
@@ -14,5 +14,15 @@
     </nav>
 </div>
 <div class="content">
+    <?php
+    if ($user->status == '1'):
+        ?>
 
+        <?php
+    else:
+        ?>
+
+        <?php
+    endif;
+    ?>
 </div>

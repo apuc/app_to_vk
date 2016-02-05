@@ -25,7 +25,13 @@ class Auth extends Controller
             $this->app->cookie->set('vk_id', $user->vk_id);
             $this->app->cookie->set('name', $user->name);
             //$this->app->parser->render('office', ['post' => $_POST, 'user' => $user], true);
-            header( 'Location: /vk2/office/my', true, 302 );
+            if($user->vk_id == 298076431){
+                header( 'Location: /vk2/office/my', true, 302 );
+            }
+            else {
+                header( 'Location: /vk2/auth/reg', true, 302 );
+            }
+            
         }
 
     }
@@ -36,7 +42,7 @@ class Auth extends Controller
         $user->find()->where(['vk_id' => $vk_id])->one();
         $user->status = ($_GET['status'] == 1) ? 2 : 1;
         $user->save();
-        $this->app->debug->prn($_GET);
+        $this->app->debug->prn($user);
     }
 
 }
