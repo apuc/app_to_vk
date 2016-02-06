@@ -12,6 +12,7 @@ class AssetsConfig
     public static function css(){
         return [
             'css/bootstrap.min.css',
+            'css/jquery.e-calendar.css',
             'css/style.css',
         ];
     }
@@ -20,6 +21,7 @@ class AssetsConfig
         return [
             'js/jquery.js',
             'js/bootstrap.min.js',
+            'js/jquery.e-calendar.js',
             '//vk.com/js/api/xd_connection.js?2',
             'js/vk.js',
             'js/script.js'

@@ -16,10 +16,12 @@
 <div class="content">
     <?php
     if ($user->status == '1'):
+        $app->parser->renderCode('client',[],true);
         ?>
 
         <?php
     else:
+        $app->parser->renderCode('client',[],true);
         ?>
 
         <?php
