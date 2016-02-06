@@ -1,4 +1,5 @@
 <?php
+use lib\Controller;
 
 /**
  * Created by PhpStorm.

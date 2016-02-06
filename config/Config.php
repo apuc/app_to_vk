@@ -1,5 +1,7 @@
 <?php
 
+namespace config;
+
 /**
  * Created by PhpStorm.
  * User: Кирилл

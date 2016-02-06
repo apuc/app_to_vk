@@ -1,5 +1,9 @@
 <?php
 
+namespace lib;
+
+use config\Config;
+
 class Model
 {
     private $db;

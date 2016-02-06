@@ -1,7 +1,10 @@
 <?php
+namespace models;
+
+use lib\Model;
 
 /**
- * Модель для работы с таблицей "geobase_city"
+ * пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "geobase_city"
  *
  * @property integer $id
  * @property string $name

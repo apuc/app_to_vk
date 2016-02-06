@@ -1,4 +1,7 @@
 <?php
+
+namespace lib;
+
 class Parser {
 
     public $layout = 'main';

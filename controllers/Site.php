@@ -1,5 +1,8 @@
 <?php
 
+use lib\Controller;
+use models\User;
+
 class Site extends Controller
 {
 
@@ -11,7 +14,6 @@ class Site extends Controller
         $user->status = 6;
         $user->ip = '123';
         $user->save();
-        $this->app->debug->prn($user->name);
         $this->app->parser->title = "Сайт";
         $this->app->parser->render('index', [
             'user' => $user

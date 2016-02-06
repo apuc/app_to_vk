@@ -1,6 +1,8 @@
 <?php
 
-
+use lib\Controller;
+use lib\helpers\Cookie;
+use models\User;
 
 class Auth extends Controller
 {
@@ -17,19 +19,19 @@ class Auth extends Controller
             $user->status = 1;
             $user->ip = $this->app->getRealIpAddr();
             $user->save();
-            $this->app->cookie->set('vk_id', $user->vk_id);
-            $this->app->cookie->set('name', $user->name);
+            Cookie::set('vk_id', $user->vk_id);
+            Cookie::set('name', $user->name);
             $this->app->parser->render('reg', ['post' => $_POST], true);
         }
         else {
-            $this->app->cookie->set('vk_id', $user->vk_id);
-            $this->app->cookie->set('name', $user->name);
+            Cookie::set('vk_id', $user->vk_id);
+            Cookie::set('name', $user->name);
             //$this->app->parser->render('office', ['post' => $_POST, 'user' => $user], true);
             if($user->vk_id == '2840615'){
-                header( 'Location: /vk2/office/my', true, 302 );
+                header( 'Location: /vk2/profile/my', true, 302 );
             }
             else {
-                header( 'Location: /vk2/profile/profile', true, 302 );
+                header( 'Location: /vk2/profile/my', true, 302 );
             }
 
         }

@@ -1,6 +1,10 @@
 <?php
+namespace models;
+
+use lib\Model;
+
 /**
- * Модель для работы с таблицей "geobase_region"
+ * пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "geobase_region"
  *
  * @property integer $id
  * @property string $name

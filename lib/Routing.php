@@ -1,5 +1,7 @@
 <?php
 
+namespace lib;
+
 /**
  * Created by PhpStorm.
  * User: Кирилл

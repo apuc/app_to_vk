@@ -1,6 +1,13 @@
+<?php
+use lib\helpers\ArrayHelper;
+use lib\helpers\Forms;
+?>
+
 <div>Вы зарегистрированы как
     <?php
-        if($user->status == 1):?>
+
+
+    if($user->status == 1):?>
             <span>Клиент</span>
         <?php endif;?>
     <?php if($user->status == 2):?>
@@ -13,6 +20,6 @@
 <div><span>Фамилия: </span><?= $user->last_name; ?></div>
 <div><span>Фамилия: </span><?= $user->last_name; ?></div>
 <div><span>Регион:</span>
-    <?= $app->forms->dropDownList('region_id',$user->region_id,ArrayHelper::map($regionAll,'id','name'));?>
+    <?= Forms::dropDownList('region_id',$user->region_id, ArrayHelper::map($regionAll,'id','name'));?>
 </div>
 
