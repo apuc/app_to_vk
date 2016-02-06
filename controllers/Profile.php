@@ -22,7 +22,7 @@ class Profile extends Controller
         $user->save();
         $region = new GeobaseRegion();
         $city = new GeobaseCity();
-        $regionAll = $region->find()->all();
+        $regionAll = $region->find()->orderBy('name','ASC')->all();
 
         $this->app->parser->render('profile',
             [

@@ -18,7 +18,6 @@ use lib\helpers\Forms;
 
 <div><span>Имя: </span><?= $user->name; ?></div>
 <div><span>Фамилия: </span><?= $user->last_name; ?></div>
-<div><span>Фамилия: </span><?= $user->last_name; ?></div>
 <div><span>Регион:</span>
     <?= Forms::dropDownList('region_id',$user->region_id, ArrayHelper::map($regionAll,'id','name'));?>
 </div>
