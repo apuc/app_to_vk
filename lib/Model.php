@@ -104,6 +104,29 @@ class Model
         return $arr;
     }
 
+
+    /**\
+     * Лимит выборки из базы
+     * @params $offset integer отступ.
+     * @params $count integer количество.
+     * @return $this the model instance itself.
+     */
+    public function limit($offset, $count){
+        $this->query .= " LIMIT $offset, $count";
+        return $this;
+    }
+
+    /**
+     * Сортировка выборки из базы
+     * @params $field string поле по которому сортировать.
+     * @params $sorting string ASC/DESC.
+     * @return $this the model instance itself.
+     */
+    public function orderBy($field, $sorting){
+        $this->query .= " ORDER BY $field $sorting";
+        return $this;
+    }
+
     /**
      * Осуществляет сохранение (обновление) данных в таблице
      * @return integer|boolean id записи или false.
