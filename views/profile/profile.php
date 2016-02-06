@@ -1,8 +1,10 @@
 <?php
 use lib\helpers\ArrayHelper;
 use lib\helpers\Forms;
-?>
+use widgets\MainMenu;
 
+?>
+<?= MainMenu::run(['user'=>$user]) ?>
 <div>Вы зарегистрированы как
     <?php
 

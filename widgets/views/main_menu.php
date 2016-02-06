@@ -1,9 +1,9 @@
 <div class="header-menu">
     <div class="ava-name">
         <div class="ava-name-img">
-            <img src="<?= $user['photo'] ?>" alt="">
+            <img src="<?= $user->photo ?>" alt="">
         </div>
-        <a href="#"><?= $user['name'] ?></a>
+        <a href="#"><?= $user->name ?></a>
     </div>
     <nav class="main-menu">
         <ul>

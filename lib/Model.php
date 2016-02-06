@@ -105,21 +105,21 @@ class Model
     }
 
 
-    /**\
+    /**
      * Лимит выборки из базы
-     * @params $offset integer отступ.
-     * @params $count integer количество.
+     * @param $offset integer отступ.
+     * @param $count integer количество.
      * @return $this the model instance itself.
      */
-    public function limit($offset, $count){
+    public function limit($count, $offset = 0){
         $this->query .= " LIMIT $offset, $count";
         return $this;
     }
 
     /**
      * Сортировка выборки из базы
-     * @params $field string поле по которому сортировать.
-     * @params $sorting string ASC/DESC.
+     * @param $field string поле по которому сортировать.
+     * @param $sorting string ASC/DESC.
      * @return $this the model instance itself.
      */
     public function orderBy($field, $sorting){
