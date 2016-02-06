@@ -8,6 +8,7 @@ include "Controller.php";
 include "Widget.php";
 include "Db.php";
 include "Model.php";
+include "ArrayHelper.php";
 
 $app->addModels();
 

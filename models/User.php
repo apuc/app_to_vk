@@ -13,6 +13,8 @@
  * @property integer $dt_add
  * @property integer $status
  * @property integer $vk_id
+ * @property integer $city_id
+ * @property integer $region_id
  */
 
 class User extends Model
@@ -38,6 +40,8 @@ class User extends Model
             'dt_add',
             'status',
             'vk_id',
+            'city_id',
+            'region_id',
         ];
     }
 
@@ -46,8 +50,8 @@ class User extends Model
      */
     public function rules(){
         return [
-            [['name', 'ip', 'dt_add', 'status', 'vk_id'], 'required'],
-            [['dt_add', 'status', 'vk_id'], 'integer'],
+            [['name', 'ip', 'dt_add', 'status', 'vk_id', 'city_id', 'region_id'], 'required'],
+            [['dt_add', 'status', 'vk_id', 'city_id', 'region_id'], 'integer'],
             [['name', 'email', 'phone', 'ip', 'last_name', 'photo'], 'string']
         ];
     }

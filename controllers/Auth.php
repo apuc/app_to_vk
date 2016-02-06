@@ -29,7 +29,7 @@ class Auth extends Controller
                 header( 'Location: /vk2/office/my', true, 302 );
             }
             else {
-                header( 'Location: /vk2/auth/reg', true, 302 );
+                header( 'Location: /vk2/profile/profile', true, 302 );
             }
 
         }
@@ -42,7 +42,10 @@ class Auth extends Controller
         $user->find()->where(['vk_id' => $vk_id])->one();
         $user->status = ($_GET['status'] == 1) ? 2 : 1;
         $user->save();
-        $this->app->debug->prn($vk_id);
+        $this->app->parser->render('profile',
+            [
+                'user' =>$user,
+            ]);
     }
 
 }
