@@ -1,3 +1,7 @@
+<?php
+use assets\AppAssets;
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">

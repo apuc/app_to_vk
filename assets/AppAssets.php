@@ -1,6 +1,7 @@
 <?php
 
-include_once('AssetsConfig.php');
+namespace assets;
+
 
 class AppAssets
 {
