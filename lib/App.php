@@ -2,38 +2,23 @@
 
 namespace lib;
 
-/*include "Parser.php";
-include "Routing.php";
-include "CRUD.php";*/
-
 
 class App
 {
     public $crud;
     public $routing;
     public $parser;
-    public $cookie;
-    public $forms;
-    public $geo;
+    public $include_file;
+
+
 
     public function __construct(){
         $this->parser = new Parser();
         $this->crud = new CRUD();
         $this->routing = new Routing();
+        $this->include_file = new Include_file();
     }
 
-    public function addModels(){
-        if ($handle = opendir(ROOT_DIR . DOP_DIR . '/models/')) {
-            /* Именно этот способ чтения элементов каталога является правильным. */
-            while (false !== ($file = readdir($handle))) {
-                if ($file != "." && $file != "..") {
-                    $classes[] = $file;
-                    require_once (ROOT_DIR . DOP_DIR . "/models/" . $file);
-                }
-            }
-            closedir($handle);
-        }
-    }
 
     public function getRealIpAddr()
     {

@@ -62,7 +62,7 @@ class Parser {
         }
 
         ob_start();
-        include(ROOT_DIR . DOP_DIR . "/widgets/views/" . mb_strtolower($this->widget) . "/" . $tpl . ".php");
+        include(ROOT_DIR . DOP_DIR . "/widgets/views/"  . $tpl . ".php");
         $a = ob_get_contents();
         ob_end_clean();
         if($view){

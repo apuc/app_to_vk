@@ -1,5 +1,7 @@
 <?php
 
+namespace lib;
+
 /**
  * Created by PhpStorm.
  * User: Кирилл
@@ -18,6 +20,24 @@ class Widget
 
     public function className(){
         return get_class($this);
+    }
+
+    public static function classNameStatic(){
+        return get_called_class();
+    }
+
+    public static function run($arr = []){
+        $class = self::classNameStatic();
+        $widget = new $class();
+        foreach($arr as $k => $v){
+            $widget->$k = $v;
+        }
+        return $widget->start();
+
+    }
+
+    public function start(){
+        return '';
     }
 
 }
