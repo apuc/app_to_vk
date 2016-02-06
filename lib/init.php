@@ -3,6 +3,9 @@ use lib\App;
 
 include ROOT_DIR . DOP_DIR . "/config/Config.php";
 
+require_once ROOT_DIR . DOP_DIR ."/assets/AssetsConfig.php";
+require_once ROOT_DIR . DOP_DIR ."/assets/AppAssets.php";
+
 require_once "Include_file.php";
 require_once "Parser.php";
 require_once "Routing.php";
@@ -24,5 +27,3 @@ require_once "helpers/Cookie.php";
 
 $app->include_file->addModels();
 $app->include_file->addWidgets();
-
-include DIR . "/assets/AppAssets.php";

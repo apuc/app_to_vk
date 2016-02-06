@@ -1,5 +1,8 @@
 <?php
 
+
+namespace assets;
+
 /**
  * Created by PhpStorm.
  * User: Кирилл
