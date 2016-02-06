@@ -17,10 +17,11 @@ use widgets\MainMenu;
         <?php endif;?>
 </div>
 <?php /*$app->debug->prn(ArrayHelper::map($regionAll,'id','name'));*/?>
-
-<div><span>Имя: </span><?= $user->name; ?></div>
-<div><span>Фамилия: </span><?= $user->last_name; ?></div>
-<div><span>Регион:</span>
-    <?= Forms::dropDownList('region_id',$user->region_id, ArrayHelper::map($regionAll,'id','name'));?>
-</div>
+<?= Forms::begin();?>
+    <div><span>Имя: </span><?= $user->name; ?></div>
+    <div><span>Фамилия: </span><?= $user->last_name; ?></div>
+    <div><span>Регион:</span>
+        <?= Forms::dropDownList('region_id',$user->region_id, ArrayHelper::map($regionAll,'id','name'),['class' => 'fff']);?>
+    </div>
+<?= Forms::end();?>
 
