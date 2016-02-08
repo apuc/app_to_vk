@@ -12,5 +12,6 @@ echo MainMenu::run();
             'prompt' => 'Регион'
         ])?>
         <span class="search-city"></span>
+        <span class="search-service"></span>
     </div>
 </div>

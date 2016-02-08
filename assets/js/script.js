@@ -3,7 +3,7 @@ $(document).ready(function(){
         weekDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
         months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
             'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-        eventTitle: 'Записис',
+        eventTitle: 'Записи',
         events: [
             {title: 'Парикмахер 1', description: 'Стрижка кару (мастер 1)', datetime: new Date(2016, 1, 12, 17, 20)},
             {title: 'Парикмахер 2', description: 'Стрижка каскад (мастер 2)', datetime: new Date(2016, 1, 23, 16, 30)}
@@ -30,6 +30,19 @@ $(document).ready(function(){
             data: 'regionId=' + regionId,
             success: function (data) {
                 $('.search-city').html(data);
+            }
+        });
+    });
+
+    $(document).on('change', '.searchCity', function(){
+        var cityId = $('.searchCity').val();
+        $.ajax({
+            type: 'POST',
+            url: "/vk2/search/get_service/",
+            data: 'cityId=' + cityId,
+            success: function (data) {
+                console.log(data);
+                $('.search-service').html(data);
             }
         });
     });
