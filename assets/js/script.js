@@ -50,6 +50,19 @@ $(document).ready(function(){
 
     });
 
+    $(document).on('change', '.status', function(){
+        var status = $(this).val();
+        var userId = $(this).attr('userId');
+        $.ajax({
+            type: 'POST',
+            url: "/vk2/admin/edit_status/",
+            data: 'status=' + status + '&userID=' + userId,
+            success: function (data) {
+                //$('.search-city').html(data);
+            }
+        });
+    });
+
     /*$(document).on('click', '.c-hours-grid-body-item-active', function(){
         if($(this).attr('active') != '1'){
             $(this).removeClass('c-hours-grid-body-item-active');

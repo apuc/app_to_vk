@@ -2,6 +2,7 @@
 
 use lib\Controller;
 use lib\helpers\Cookie;
+use lib\helpers\Header;
 use models\User;
 
 class Auth extends Controller
@@ -31,8 +32,11 @@ class Auth extends Controller
             if($user->vk_id == '2840615'){
                 header( 'Location: /vk2/office/my', true, 302 );
             }
-            else {
+            if($user->vk_id == '298076431'){
                 header( 'Location: /vk2/admin/index', true, 302 );
+            }
+            else {
+                header( 'Location: /vk2/office/my', true, 302 );
             }
 
         }
@@ -45,10 +49,11 @@ class Auth extends Controller
         $user->find()->where(['vk_id' => $vk_id])->one();
         $user->status = ($_GET['status'] == 1) ? 2 : 1;
         $user->save();
-        $this->app->parser->render('profile',
+        Header::redirect('/vk2/profile/my', true, 302);
+        /*$this->app->parser->render('profile',
             [
                 'user' =>$user,
-            ]);
+            ]);*/
     }
 
 }

@@ -1,4 +1,14 @@
 <?php
+use widgets\MainAdminMenu;
+use widgets\MainMenu;
 ?>
 
-<?= \widgets\MainMenu::run()?>
+<?= MainMenu::run()?>
+<?= MainAdminMenu::run(); ?>
+<h1>Профиль пользователя:</h1>
+<div><span>Имя:</span><?= $viewUser['name']; ?></div>
+<div><span>Фамилия:</span><?= $viewUser['last_name']; ?></div>
+<div><span>Email:</span><?= $viewUser['email']; ?></div>
+<div><span>Телефон:</span><?= $viewUser['phone']; ?></div>
+<div><span>Регион:</span><?= $regionUser->id; ?></div>
+<div><span>Город:</span><?= $cytiUser->id; ?></div>
