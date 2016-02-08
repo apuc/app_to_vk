@@ -17,6 +17,7 @@ class AssetsConfig
             'css/bootstrap.min.css',
             'css/jquery.e-calendar.css',
             'css/style.css',
+            'css/dima.css',
         ];
     }
 

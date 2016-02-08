@@ -71,12 +71,51 @@ class Forms
     }
 
     /**
+     * @param $name
+     * @param string $value
+     * @param bool|false $options array
+     * @return string
+     */
+    public static function inputHidden($name, $value = '', $options = false){
+        $op = self::getOptions($options);
+        return "<input type='hidden' name='$name' value='$value' $op>";
+    }
+
+    /**
+     * @param $name
+     * @param string $value
+     * @param bool|false $options false
+     * @return string
+     */
+    public static function inputText($name, $value = '', $options = false){
+        $op = self::getOptions($options);
+        return "<input type='text' name='$name' value='$value' $op>";
+    }
+
+    /**
+     * @param $name
+     * @param bool|integer $value
+     * @param $data
+     * @param bool|array $options
+     * @return string
+     */
+    public static function checkboxList($name, $value = false, $data, $options = false){
+        $op = self::getOptions($options);
+        $html = '';
+        foreach ($data as $key => $val) {
+            $ch = ($key == $value) ?  'checked' : '';
+            $html .= "<input name='".$name."[]' $ch type='checkbox' value='$key' $op>$val";
+        }
+        return $html;
+
+    }
+
+    /**
      * @param $name string
      * @param string $value
      * @param bool|false $options array
      * @return string
      */
-
     public static function textarea($name,$value = '', $options = false){
         $op = self::getOptions($options);
         return "<textarea name='$name' $op>$value</textarea>";
