@@ -32,11 +32,8 @@ class Auth extends Controller
             if($user->vk_id == '2840615'){
                 header( 'Location: /vk2/office/my', true, 302 );
             }
-            if($user->vk_id == '298076431'){
-                header( 'Location: /vk2/admin/index', true, 302 );
-            }
             else {
-                header( 'Location: /vk2/office/my', true, 302 );
+                header( 'Location: /vk2/admin/index', true, 302 );
             }
 
         }
