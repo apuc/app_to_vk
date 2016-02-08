@@ -24,6 +24,7 @@ require_once "helpers/Debug.php";
 require_once "helpers/Forms.php";
 require_once "helpers/Geo.php";
 require_once "helpers/Cookie.php";
+require_once "helpers/Header.php";
 
 $app->include_file->addModels();
 $app->include_file->addWidgets();

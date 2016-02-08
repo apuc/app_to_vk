@@ -3,7 +3,8 @@
         <div class="ava-name-img">
             <img src="<?= $user->photo ?>" alt="">
         </div>
-        <a href="#"><?= $user->name ?></a>
+        <a href="/vk2/profile/my"><?= $user->name ?></a>
+
     </div>
     <nav class="main-menu">
         <ul>

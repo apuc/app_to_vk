@@ -9,4 +9,16 @@ $(document).ready(function(){
             {title: 'Парикмахер 2', description: 'Стрижка каскад (мастер 2)', datetime: new Date(2016, 1, 23, 16, 30)}
         ]
     });
+
+    $(document).on('change', '.region', function(){
+        var regionId = $('.region').val();
+        $.ajax({
+            type: 'POST',
+            url: "/vk2/profile/get_city",
+            data: 'regionId=' + regionId,
+            success: function (data) {
+                $('.city').html(data);
+            }
+        });
+    });
 });
