@@ -108,8 +108,8 @@
 
 .c-event-grid {
     margin-left: 1px;
-    height: inherit;
-    width: 49%;
+    height: 197px;
+    width: 100%;
     float: left;
     box-shadow: 2px 2px 5px #888888;
 }
@@ -123,11 +123,12 @@
 
 .c-event-title {
     width: 100%;
-    height: 12%;
+    height: 25%;
     text-align: center;
     font-weight: bold;
     background-color: rgb(135, 155, 188);
     color: white;
+    padding-top: 1%;
 }
 
 .c-event-body {
@@ -143,6 +144,7 @@
 
 .c-event-item > .title {
     font-weight: bold;
+    float: left;
 }
 
 .c-event-item > div {

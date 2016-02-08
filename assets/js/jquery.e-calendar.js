@@ -92,10 +92,12 @@
             var dLastDayOfPreviousMonth = new Date(dYear, dMonth + 1, 0).getDate() - dWeekDayOfMonthStart + 1;
 
             var cBody = $('<div/>').addClass('c-grid');
+            var cHours = $('<div/>').addClass('c-hours-grid');
             var cEvents = $('<div/>').addClass('c-event-grid');
             var cEventsBody = $('<div/>').addClass('c-event-body');
             cEvents.append($('<div/>').addClass('c-event-title c-pad-top').html(settings.eventTitle));
             cEvents.append(cEventsBody);
+            cHours.append($('<div/>').addClass('c-hours-grid-title').html('Время'))
             var cNext = $('<div/>').addClass('c-next c-grid-title c-pad-top');
             var cMonth = $('<div/>').addClass('c-month c-grid-title c-pad-top');
             var cPrevious = $('<div/>').addClass('c-previous c-grid-title c-pad-top');
@@ -146,7 +148,7 @@
                 if (d.getMonth() == dMonth && d.getFullYear() == dYear) {
                     var date = lpad(d.getDate(), 2) + '/' + lpad(d.getMonth() + 1, 2) + ' ' + lpad(d.getHours(), 2) + ':' + lpad(d.getMinutes(), 2);
                     var item = $('<div/>').addClass('c-event-item');
-                    var title = $('<div/>').addClass('title').html(date + '  ' + settings.events[i].title + '<br/>');
+                    var title = $('<div/>').addClass('title').html(date + '  ' + settings.events[i].title + ' - ');
                     var description = $('<div/>').addClass('description').html(settings.events[i].description + '<br/>');
                     item.attr('data-event-day', d.getDate());
                     item.on('mouseover', mouseOverItem).on('mouseleave', mouseLeaveItem);
@@ -157,6 +159,7 @@
             $(instance).addClass('calendar');
             cEventsBody.append(eventList);
             $(instance).html(cBody).append(cEvents);
+            $(cHours).insertAfter(cBody);
         }
 
         return print();
