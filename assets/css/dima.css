@@ -23,3 +23,33 @@ form .btn{
     margin-top: 10px;
 }
 
+.bg-danger{
+    margin:10px 0;
+    font-size: 17px;
+}
+
+.admin_view{
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background: url(../img/view.gif) no-repeat;
+}
+
+.admin_edit{
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background: url(../img/edit.png) no-repeat;
+}
+
+.admin_delete{
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    background: url(../img/del.png) no-repeat;
+}

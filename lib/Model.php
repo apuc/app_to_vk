@@ -160,6 +160,30 @@ class Model
     }
 
     /**
+     * @param $id integer
+     * @return array|bool
+     */
+    public function deleteAll($id){
+        if(is_array($id)){
+            foreach ($id as $i) {
+                $this->db->queryDelete($this->table_name(), $i);
+            }
+        }else{
+            return $this->db->queryDelete($this->table_name(), $id);
+        }
+        return true;
+    }
+
+    /**
+     * @param $field string
+     * @param $value integer|string
+     * @return array|bool
+     */
+    public function deleteByField($field,$value){
+        return $this->db->queryDeleteByField($this->table_name(), $field, $value);
+    }
+
+    /**
      * Проверяет совпадает ли переданное правило с полем
      * @param $field string поле для сравнения
      * @param $rule string правило для сравнения

@@ -20,8 +20,8 @@ class Profile extends Controller
         $vk_id = Cookie::get('vk_id');
         $user = new User();
         $user->find()->where(['vk_id' => $vk_id])->one();
-        $user->status = ($_GET['status'] == 1) ? 2 : 1;
-        $user->save();
+        /*$user->status = ($_GET['status'] == 1) ? 2 : 1;
+        $user->save();*/
         $region = new GeobaseRegion();
         $regionAll = $region->find()->orderBy('name', 'ASC')->all();
 

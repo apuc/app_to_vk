@@ -53,7 +53,7 @@ class User extends Model
      */
     public function rules(){
         return [
-            [['name', 'ip', 'dt_add', 'status', 'vk_id', 'city_id', 'region_id'], 'required'],
+            [['name', 'ip', 'dt_add', 'status', 'vk_id'], 'required'],
             [['dt_add', 'status', 'vk_id', 'city_id', 'region_id'], 'integer'],
             [['name', 'email', 'phone', 'ip', 'last_name', 'photo'], 'string']
         ];

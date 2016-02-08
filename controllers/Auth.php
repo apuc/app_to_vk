@@ -10,6 +10,7 @@ class Auth extends Controller
     public function actionAuth(){
         $user = new User();
         $user->find()->where(['vk_id' => $_POST['id']])->one();
+
         if(!isset($user->id)){
             $user->name = $_POST['name'];
             $user->last_name = $_POST['last_name'];
@@ -31,7 +32,7 @@ class Auth extends Controller
                 header( 'Location: /vk2/office/my', true, 302 );
             }
             else {
-                header( 'Location: /vk2/profile/my', true, 302 );
+                header( 'Location: /vk2/admin/index', true, 302 );
             }
 
         }
@@ -39,7 +40,7 @@ class Auth extends Controller
     }
 
     public function actionReg(){
-        $vk_id = $this->app->cookie->get('vk_id');
+        $vk_id = Cookie::get('vk_id');
         $user = new User();
         $user->find()->where(['vk_id' => $vk_id])->one();
         $user->status = ($_GET['status'] == 1) ? 2 : 1;

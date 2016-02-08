@@ -2,6 +2,8 @@
 
 namespace lib;
 
+use lib\helpers\Debug;
+
 class Db
 {
     public $stat;
@@ -168,6 +170,19 @@ class Db
             $arr[] = $row;
         }
         return $arr;
+    }
+
+    public function queryDelete($table, $id)
+    {
+        $query = "DELETE FROM `$table` WHERE id=$id";
+        return $this->rawQuery($query);
+    }
+
+    public function queryDeleteByField($table, $field, $value)
+    {
+        $query = "DELETE FROM `$table` WHERE `$field` = '$value'";
+
+        return $this->rawQuery($query);;
     }
 
 }
