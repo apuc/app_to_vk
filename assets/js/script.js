@@ -21,4 +21,41 @@ $(document).ready(function(){
             }
         });
     });
+
+    $(document).on('change', '.regionSearch', function(){
+        var regionId = $('.regionSearch').val();
+        $.ajax({
+            type: 'POST',
+            url: "/vk2/search/get_city/",
+            data: 'regionId=' + regionId,
+            success: function (data) {
+                $('.search-city').html(data);
+            }
+        });
+    });
+
+    $(document).on('click', '.c-hours-grid-body-item', function(){
+        if($(this).attr('active') != '1'){
+            $(this).attr('active', 1);
+            if($(this).hasClass('c-hours-grid-body-item-active')){
+                $(this).removeClass('c-hours-grid-body-item-active');
+            }
+            else {
+                $(this).addClass('c-hours-grid-body-item-active');
+            }
+        }
+        else {
+            $(this).attr('active', parseInt($(this).attr('active'), 10) + 1);
+        }
+
+    });
+
+    /*$(document).on('click', '.c-hours-grid-body-item-active', function(){
+        if($(this).attr('active') != '1'){
+            $(this).removeClass('c-hours-grid-body-item-active');
+        }
+        else {
+            $(this).attr('active', parseInt($(this).attr('active'), 10) + 1);
+        }
+    });*/
 });
