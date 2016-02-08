@@ -97,6 +97,25 @@
         .main-menu ul li a:hover {
           background-color: grey; }
 
+.main-admin-menu {
+  display: block;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.3); }
+  .main-admin-menu ul {
+    text-align: center;
+    padding: 0;
+    margin: 0; }
+    .main-admin-menu ul li {
+      display: inline-block; }
+      .main-admin-menu ul li a {
+        line-height: 70px;
+        padding: 10px 20px;
+        text-decoration: none; }
+        .main-admin-menu ul li a:hover {
+          background-color: grey; }
+
 .c-hours-grid {
   width: 50%;
   float: left;
@@ -106,6 +125,10 @@
     height: 12%;
     float: left;
     display: block;
-    background-color: #7091b7; }
+    background-color: #7091b7;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */
