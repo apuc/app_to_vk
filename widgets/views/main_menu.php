@@ -15,7 +15,7 @@
             <li><a href="#">Записи</a></li>
             <li><a href="#">Настройки </a></li>
             <?php if($user->status != 2): ?>
-            <li><a href="#">Поиск</a></li>
+            <li><a href="/vk2/search/index">Поиск</a></li>
             <?php endif; ?>
         </ul>
     </nav>

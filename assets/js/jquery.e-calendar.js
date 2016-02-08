@@ -97,7 +97,26 @@
             var cEventsBody = $('<div/>').addClass('c-event-body');
             cEvents.append($('<div/>').addClass('c-event-title c-pad-top').html(settings.eventTitle));
             cEvents.append(cEventsBody);
-            cHours.append($('<div/>').addClass('c-hours-grid-title').html('Время'))
+
+            cHours.append($('<div/>').addClass('c-hours-grid-title').html('Время'));
+            var cHoursBody = $('<div/>').addClass('c-hours-grid-body');
+            var hoursStart = 9;
+            var hoursEnd = 18;
+            for( i = hoursStart; i < hoursEnd; i++){
+                for(j = 0; j < 59; j = j + 15){
+                    var m = j;
+                    if(j == 0){
+                        m = '00';
+                    }
+                    var h = i;
+                    cHoursBody.append($('<div/>').addClass('c-hours-grid-body-item').html(h + ' : ' + m));
+                    if(j == 45) {
+                        cHoursBody.append($('<div/>').addClass('c-hours-grid-body-hr'));
+                    }
+                }
+            }
+            cHours.append(cHoursBody);
+
             var cNext = $('<div/>').addClass('c-next c-grid-title c-pad-top');
             var cMonth = $('<div/>').addClass('c-month c-grid-title c-pad-top');
             var cPrevious = $('<div/>').addClass('c-previous c-grid-title c-pad-top');

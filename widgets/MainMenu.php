@@ -1,7 +1,9 @@
 <?php
 
 namespace widgets;
+use lib\helpers\Cookie;
 use lib\Widget;
+use models\User;
 
 /**
  * Created by PhpStorm.
@@ -12,10 +14,18 @@ use lib\Widget;
 class MainMenu extends Widget
 {
 
-    public $user;
+    public $user = false;
 
     public function start(){
-        return $this->app->parser->renderW('main_menu', ['user' => $this->user], false);
+        if($this->user){
+            return $this->app->parser->renderW('main_menu', ['user' => $this->user], false);
+        }
+        else {
+            $user = new User();
+            $user->find()->where(['vk_id' => Cookie::get('vk_id')])->one();
+            return $this->app->parser->renderW('main_menu', ['user' => $user], false);
+        }
+
     }
 
 }

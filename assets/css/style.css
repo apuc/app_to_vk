@@ -130,5 +130,36 @@
     text-align: center;
     color: white;
     font-weight: bold; }
+  .c-hours-grid-body {
+    width: 97%;
+    display: block;
+    float: left;
+    height: 293px;
+    overflow: auto;
+    padding-left: 4px; }
+    .c-hours-grid-body-item {
+      padding: 5px;
+      display: block;
+      float: left;
+      width: 19%;
+      border: 1px solid grey;
+      border-radius: 4px;
+      margin: 5px;
+      cursor: pointer; }
+      .c-hours-grid-body-item:hover {
+        background-color: #879bbc; }
+      .c-hours-grid-body-item-active {
+        background-color: #7091b7; }
+    .c-hours-grid-body-hr {
+      width: 100%;
+      display: block;
+      float: left;
+      height: 2px; }
+
+.search {
+  padding: 10px; }
+  .search-city {
+    margin-top: 20px;
+    display: block; }
 
 /*# sourceMappingURL=style.css.map */

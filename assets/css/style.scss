@@ -140,4 +140,42 @@
     color: white;
     font-weight: bold;
   }
+  &-body {
+    width: 97%;
+    display: block;
+    float: left;
+    height: 293px;
+    overflow: auto;
+    padding-left: 4px;
+    &-item {
+      padding: 5px;
+      display: block;
+      float: left;
+      width: 19%;
+      border: 1px solid grey;
+      border-radius: 4px;
+      margin: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(135, 155, 188);
+      }
+      &-active {
+        background-color: #7091b7;
+      }
+    }
+    &-hr {
+      width: 100%;
+      display: block;
+      float: left;
+      height: 2px;
+    }
+  }
+}
+
+.search {
+  padding: 10px;
+  &-city {
+    margin-top: 20px;
+    display: block;
+  }
 }
