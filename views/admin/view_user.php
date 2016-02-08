@@ -1,0 +1,4 @@
+<?php
+?>
+
+<?= \widgets\MainMenu::run()?>
