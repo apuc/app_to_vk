@@ -10,5 +10,6 @@ use widgets\MainMenu;
 <div><span>Фамилия:</span><?= $viewUser['last_name']; ?></div>
 <div><span>Email:</span><?= $viewUser['email']; ?></div>
 <div><span>Телефон:</span><?= $viewUser['phone']; ?></div>
-<div><span>Регион:</span><?= $regionUser->id; ?></div>
-<div><span>Город:</span><?= $cytiUser->id; ?></div>
+<div><span>Регион:</span><?= $regionUser['name']; ?></div>
+<div><span>Город:</span><?= $cityUser['name']; ?></div>
+
