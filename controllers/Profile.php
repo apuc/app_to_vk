@@ -52,7 +52,7 @@ class Profile extends Controller
     }
 
     public function actionView_master(){
-        
+
     }
 
     public function actionGet_city(){
