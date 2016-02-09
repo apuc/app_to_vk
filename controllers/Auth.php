@@ -15,7 +15,12 @@ class Auth extends Controller
             $user->name = $_POST['name'];
             $user->last_name = $_POST['last_name'];
             $user->vk_id = $_POST['id'];
-            $user->photo = $_POST['photo'];
+            if($_POST['photo'] == 'undefined'){
+                $user->photo = $_POST['photo_max'];
+            }
+            else {
+                $user->photo = $_POST['photo'];
+            }
             $user->dt_add = time();
             $user->status = 1;
             $user->ip = $this->app->getRealIpAddr();

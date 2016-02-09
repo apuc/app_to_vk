@@ -1,10 +1,12 @@
 <?php
 use lib\Controller;
 use lib\helpers\ArrayHelper;
+use lib\helpers\Debug;
 use lib\helpers\Forms;
 use models\GeobaseCity;
 use models\GeobaseRegion;
 use models\Services;
+use models\User;
 
 /**
  * Created by PhpStorm.
@@ -33,7 +35,13 @@ class Search extends Controller
     public function actionGet_service(){
         $service = new Services();
         $cityAll = $service->find()->orderBy('name','ASC')->all();
-        echo Forms::dropDownList('ыукмшсу', null, ArrayHelper::map($cityAll, 'id', 'name'),['class'=>'searchService form-control','prompt'=>'Выберите услугу']);
+        echo Forms::dropDownList('service', null, ArrayHelper::map($cityAll, 'id', 'name'),['class'=>'searchService form-control','prompt'=>'Выберите услугу']);
+    }
+
+    public function actionSearching(){
+        $user = new User();
+        $res = $user->find()->where(['status' => 2, 'region_id' => $_POST['regionId'], 'city_id' => $_POST['cityId']])->all();
+        Debug::prn($res);
     }
 
 }
