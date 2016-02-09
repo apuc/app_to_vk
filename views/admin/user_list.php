@@ -1,5 +1,6 @@
 
-<?php use widgets\MainAdminMenu;
+<?php use lib\helpers\Forms;
+use widgets\MainAdminMenu;
 use widgets\MainMenu;
 
 echo MainMenu::run(['user' => $user]);
@@ -27,7 +28,7 @@ echo  MainAdminMenu::run();
             <td><?= $us['last_name']; ?></td>
             <td><?= $us['vk_id']; ?></td>
             <td><?= date('d-m-Y',$us['dt_add']); ?></td>
-            <td><?= \lib\helpers\Forms::dropDownList('status',$us['status'],['1'=>'Клиент','2'=>'Мастер','3'=>'Админ'],['class'=>'form-control status','userId'=>$us->id]);
+            <td><?= Forms::dropDownList('status',$us['status'],['1'=>'Клиент','2'=>'Мастер','3'=>'Админ'],['class'=>'form-control status','userId'=>$us['id']]);
 
                /* switch($us['status']){
                     case 1: echo 'Клиент';break;
