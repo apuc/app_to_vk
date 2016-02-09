@@ -12,7 +12,7 @@ namespace models;
 use lib\Model;
 
 /**
- * ������ ��� ������ � �������� "geobase_city"
+ * Модель для работы с таблицей "services"
  *
  * @property integer $id
  * @property string $name

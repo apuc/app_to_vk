@@ -1,3 +1,3 @@
 <div class="myEntries">
-    <div id="calendar"></div>
+    <div id="calendar" my-page="1"></div>
 </div>
