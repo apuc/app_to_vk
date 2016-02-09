@@ -23,13 +23,36 @@ class Admin extends Controller
     }
 
     public function actionUser_list(){
+        $num = 6;
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+        } else {
+            $page = 1;
+        }
+
+
         $user = new User();
         $user->find()->where(['vk_id' => Cookie::get('vk_id')])->one();
-        $allUser = $user->find()->orderBy('dt_add','DESC')->all();
+        $allUser = $user->find()->all();
+        $kol = 0;
+        foreach ($allUser as $au) {
+            $kol++;
+        }
+        $total = intval(($kol - 1) / $num) + 1;
+        $page = intval($page);
+
+        $start = $page * $num - $num;
+
+        $allUserPage = $user->find()->orderBy('dt_add','DESC')->limit($num, $start)->all();
+
         $this->app->parser->render('user_list',
             [
                 'user' => $user,
-                'allUser' => $allUser,
+                'allUser' => $allUserPage,
+                'kol' => $kol,
+                'num' =>$num,
+                'page' => $page,
+                'total' => $total,
             ]);
     }
 
