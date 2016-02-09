@@ -51,8 +51,22 @@ class Profile extends Controller
 
     }
 
-    public function actionView_master(){
+    public function actionMy_services(){
+        
+    }
 
+    public function actionView_master(){
+        $this->app->parser->render('view_master', [
+            'user_id' => $_GET['id']
+        ]);
+    }
+
+    public function actionGet_master(){
+        $master = new User();
+        $master->find()->where(['id' => $_POST['user_id']])->one();
+        $this->app->parser->renderCode('get_master',[
+            'master' => $master
+        ]);
     }
 
     public function actionGet_city(){

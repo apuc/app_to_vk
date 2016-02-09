@@ -1,9 +1,16 @@
 $(document).ready(function(){
+    var myPage = $('#calendar').attr('my-page');
+    if(myPage == '1'){
+        var eventTitle = 'Записи';
+    }
+    else {
+        var eventTitle = 'Мастер';
+    }
     $('#calendar').eCalendar({
         weekDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
         months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
             'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-        eventTitle: 'Записи',
+        eventTitle: eventTitle,
         events: [
             {title: 'Парикмахер 1', description: 'Стрижка кару (мастер 1)', datetime: new Date(2016, 1, 12, 17, 20)},
             {title: 'Парикмахер 2', description: 'Стрижка каскад (мастер 2)', datetime: new Date(2016, 1, 23, 16, 30)}

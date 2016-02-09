@@ -179,16 +179,16 @@
                 }
             }
             else {
-                /*$.ajax({
-                    type: 'POST',
-                    url: "/vk2/search/get_service/",
-                    data: 'cityId=' + cityId,
-                    success: function (data) {
-                        console.log(data);
-                        $('.search-service').html(data);
-                    }
-                });*/
-                eventList.append('Портфолио');
+                var userId = $('#calendar').attr('user-id');
+                    $.ajax({
+                        type: 'POST',
+                        url: "/vk2/profile/get_master/",
+                        data: 'user_id=' + userId,
+                        success: function (data) {
+                            eventList.append(data);
+                        }
+                    });
+
             }
 
             $(instance).addClass('calendar');

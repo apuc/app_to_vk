@@ -194,4 +194,48 @@
     width: 140px;
     text-align: center; }
 
+.master-box {
+  display: block;
+  float: left;
+  width: 100%;
+  height: 150px; }
+  .master-box-photo {
+    display: block;
+    float: left;
+    width: 150px;
+    height: 150px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden; }
+    .master-box-photo img {
+      min-height: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+  .master-box-descr {
+    padding-left: 30px;
+    display: block;
+    float: left;
+    height: 150px; }
+    .master-box-descr-name {
+      display: block;
+      float: left;
+      width: 100%; }
+    .master-box-descr-portfolio {
+      display: block;
+      float: left;
+      width: 100%; }
+    .master-box-descr-btn {
+      display: block;
+      float: left;
+      width: 100%; }
+
 /*# sourceMappingURL=style.css.map */

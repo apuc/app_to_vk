@@ -13,7 +13,9 @@
             <?php endif; ?>
             <li><a href="/vk2/office/my">Кабинет</a></li>
             <li><a href="#">Записи</a></li>
-            <li><a href="#">Настройки </a></li>
+            <?php if($user->status == 2): ?>
+                <li><a href="/vk2/profile/my_services">Мои услуги</a></li>
+            <?php endif; ?>
             <?php if($user->status != 2): ?>
             <li><a href="/vk2/search/index">Поиск</a></li>
             <?php endif; ?>
