@@ -18,6 +18,7 @@ use lib\Model;
  * @property string $service_id
  * @property string $master_id
  * @property string $price
+ * @property string $descr
  */
 class SubServices extends Model
 {
@@ -38,6 +39,7 @@ class SubServices extends Model
             'service_id',
             'master_id',
             'price',
+            'descr',
         ];
     }
 
@@ -47,8 +49,8 @@ class SubServices extends Model
     public function rules(){
         return [
             [['title', 'service_id', 'master_id', 'price'], 'required'],
-            [['id', 'service_id', 'master_id'], 'integer'],
-            [['price', 'title'], 'string']
+            [['service_id', 'master_id'], 'integer'],
+            [['price', 'title', 'descr'], 'string']
         ];
     }
 }

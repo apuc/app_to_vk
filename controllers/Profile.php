@@ -6,6 +6,7 @@ use lib\helpers\Forms;
 use models\GeobaseCity;
 use models\GeobaseRegion;
 use models\Services;
+use models\SubServices;
 use models\User;
 
 /**
@@ -55,7 +56,21 @@ class Profile extends Controller
     }
 
     public function actionMy_services(){
-        $this->app->parser->render('my_service');
+        $msg = '';
+        if(isset($_POST['title'])){
+            $user = new User();
+            $user->find()->where(['vk_id' => Cookie::get('vk_id')])->one();
+
+            $sub = new SubServices();
+            $sub->title = $_POST['title'];
+            $sub->descr = $_POST['descr'];
+            $sub->price = $_POST['price'];
+            $sub->service_id = $_POST['service'];
+            $sub->master_id = $user->id;
+            $sub->save();
+            $msg = "Услуга добавленна";
+        }
+        $this->app->parser->render('my_service', ['msg'=>$msg]);
     }
 
     public function actionView_master(){
