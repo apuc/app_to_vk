@@ -63,6 +63,7 @@ class Profile extends Controller
             $user->city_id = $_POST['city_id'];
             $user->email = $_POST['email'];
             $user->phone = $_POST['phone'];
+            $user->link = $_POST['link'];
             $user->save();
 
             foreach($_POST['services'] as $serv){

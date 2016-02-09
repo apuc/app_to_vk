@@ -56,6 +56,14 @@
             $('div.c-event[data-event-day="' + d + '"]').removeClass('c-event-over');
         };
         var nextMonth = function () {
+            var curMonth = parseInt($('#current_day').attr('month'), 10);
+            if(curMonth == 12){
+                curMonth = 1;
+            }
+            else {
+                curMonth++;
+            }
+            $('#current_day').attr('month', curMonth);
             if (dMonth < 11) {
                 dMonth++;
             } else {
@@ -65,6 +73,14 @@
             print();
         };
         var previousMonth = function () {
+            var curMonth = parseInt($('#current_day').attr('month'), 10);
+            if(curMonth == 1){
+                curMonth = 12;
+            }
+            else {
+                curMonth--;
+            }
+            $('#current_day').attr('month', curMonth);
             if (dMonth > 0) {
                 dMonth--;
             } else {

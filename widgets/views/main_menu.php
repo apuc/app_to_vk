@@ -13,7 +13,7 @@
             <?php endif; ?>
             <li><a href="/vk2/office/my">Кабинет</a></li>
             <li><a href="#">Записи</a></li>
-            <?php if($user->status == 2): ?>
+            <?php if($user->status == 2 or $user->status == 3): ?>
                 <li><a href="/vk2/profile/my_services">Мои услуги</a></li>
             <?php endif; ?>
             <?php if($user->status != 2): ?>
