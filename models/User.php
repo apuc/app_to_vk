@@ -58,4 +58,8 @@ class User extends Model
             [['name', 'email', 'phone', 'ip', 'last_name', 'photo'], 'string']
         ];
     }
+
+    public function get_current(){
+
+    }
 }
