@@ -26,6 +26,7 @@ use widgets\MainMenu;
     <?= Forms::inputText('email', $user->email,['class' => 'form-control']);?>
     <span>Телефон:</span>
     <?= Forms::inputText('phone', $user->phone,['class' => 'form-control']);?>
+    <p class="bg-danger">Выберите услуги которые предоставляете</p>
     <?= Forms::checkboxList('services', 0, ArrayHelper::map($services,'id','name'));?>
 
     <p class="bg-danger">Выберите свое месторасположение</p>
