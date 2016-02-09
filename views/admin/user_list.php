@@ -1,5 +1,6 @@
 
 <?php use lib\helpers\Forms;
+use lib\helpers\Pagination;
 use widgets\MainAdminMenu;
 use widgets\MainMenu;
 
@@ -41,4 +42,8 @@ echo  MainAdminMenu::run();
         </tr>
         <?php $i++;?>
     <?php endforeach;?>
+
+
 </table>
+
+<?= Pagination::pag($kol, $num, '/vk2/admin/user_list/', $page, $total)?>
