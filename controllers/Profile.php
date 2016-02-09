@@ -57,7 +57,7 @@ class Profile extends Controller
 
             foreach($_POST['services'] as $serv){
 
-                \lib\helpers\Debug::prn($serv);
+                $usServ = new UserServices();
                 $usServ->user_id = $user->id;
                 $usServ->service_id = $serv;
                 $usServ->save();
