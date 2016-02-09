@@ -183,3 +183,20 @@
     display: block;
   }
 }
+
+.result-item {
+  display: block;
+  float: left;
+  width: 140px;
+  height: 200px;
+  margin: 20px;
+  &-photo {
+    width: 140px;
+    height: 140px;
+    @include circleImg(140px, 140px);
+  }
+  &-name {
+    width: 140px;
+    text-align: center;
+  }
+}

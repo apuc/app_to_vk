@@ -40,8 +40,19 @@ class Search extends Controller
 
     public function actionSearching(){
         $user = new User();
-        $res = $user->find()->where(['status' => 2, 'region_id' => $_POST['regionId'], 'city_id' => $_POST['cityId']])->all();
-        Debug::prn($res);
+        $res = $user
+            ->find('`user`.*')
+            ->leftJoin('user_services','`user_services`.`user_id` = `user`.`id`')
+            ->where([
+                'status' => 2,
+                'region_id' => $_POST['regionId'],
+                'city_id' => $_POST['cityId'],
+                'service_id' => $_POST['serviceId']
+            ])
+            ->all();
+        $this->app->parser->render('searching_result', [
+            'result' => $res
+        ], true);
     }
 
 }

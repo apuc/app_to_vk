@@ -51,6 +51,10 @@ class Profile extends Controller
 
     }
 
+    public function actionView_master(){
+
+    }
+
     public function actionGet_city(){
         $city = new GeobaseCity();
         $cityAll = $city->find()->where(['region_id'=>$_POST['regionId']])->orderBy('name','ASC')->all();

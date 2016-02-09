@@ -129,6 +129,16 @@ class Model
     }
 
     /**
+     * @param $table string имя таблицы.
+     * @param $on string параметры присоединения.
+     * @return $this the model instance itself.
+     */
+    public function leftJoin($table, $on){
+        $this->query .= " LEFT JOIN `$table` ON $on";
+        return $this;
+    }
+
+    /**
      * Осуществляет сохранение (обновление) данных в таблице
      * @return integer|boolean id записи или false.
      */
@@ -182,6 +192,13 @@ class Model
      */
     public function deleteByField($field,$value){
         return $this->db->queryDeleteByField($this->table_name(), $field, $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function get_stat(){
+        return $this->db->stat;
     }
 
     /**
