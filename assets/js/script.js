@@ -97,6 +97,12 @@ $(document).ready(function(){
         });
     });
 
+    $(document).on('click', '.c-day', function(){
+        var year = $('#current_day').attr('year');
+        var month = $('#current_day').attr('month');
+        console.log(year + ' ' + month + ' ' + $(this).text());
+    });
+
     /*$(document).on('click', '.c-hours-grid-body-item-active', function(){
         if($(this).attr('active') != '1'){
             $(this).removeClass('c-hours-grid-body-item-active');

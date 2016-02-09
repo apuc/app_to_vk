@@ -35,7 +35,7 @@ class Auth extends Controller
             Cookie::set('name', $user->name);
             //$this->app->parser->render('office', ['post' => $_POST, 'user' => $user], true);
             if($user->vk_id == '2840615'){
-                header( 'Location: /vk2/profile/my_services', true, 302 );
+                header( 'Location: /vk2/office/my', true, 302 );
             }
             elseif($user->vk_id == '298076431') {
                 header( 'Location: /vk2/admin/index', true, 302 );

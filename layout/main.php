@@ -13,5 +13,6 @@ use assets\AppAssets;
         <div class="wrap" flag="0">
             <?=$content?>
         </div>
+    <span id="current_day" month="<?=date('m')?>" year="<?=date('Y')?>"></span>
     </body>
 </html>
