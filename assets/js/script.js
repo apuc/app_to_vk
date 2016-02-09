@@ -47,6 +47,20 @@ $(document).ready(function(){
         });
     });
 
+    $(document).on('change', '.searchService', function(){
+        var regionId = $('.regionSearch').val();
+        var cityId = $('.searchCity').val();
+        var serviceId = $('.searchService').val();
+        $.ajax({
+            type: 'POST',
+            url: "/vk2/search/searching/",
+            data: 'cityId=' + cityId + '&regionId=' + regionId + '&serviceId=' + serviceId,
+            success: function (data) {
+                $('.search-box').html(data);
+            }
+        });
+    });
+
     $(document).on('click', '.c-hours-grid-body-item', function(){
         if($(this).attr('active') != '1'){
             $(this).attr('active', 1);

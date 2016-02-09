@@ -13,5 +13,6 @@ echo MainMenu::run();
         ])?>
         <span class="search-city"></span>
         <span class="search-service"></span>
+        <span class="search-box"></span>
     </div>
 </div>

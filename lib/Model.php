@@ -54,10 +54,11 @@ class Model
 
     /**
      * Создает начальный запрос к таблице
+     * @param string $select необходимые поля
      * @return $this the model instance itself.
      */
-    public function find(){
-        $this->query = "SELECT * FROM `".$this->table_name()."`";
+    public function find($select = '*'){
+        $this->query = "SELECT $select FROM `".$this->table_name()."`";
         return $this;
     }
 
