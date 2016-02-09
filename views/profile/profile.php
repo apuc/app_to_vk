@@ -26,8 +26,13 @@ use widgets\MainMenu;
     <?= Forms::inputText('email', $user->email,['class' => 'form-control']);?>
     <span>Телефон:</span>
     <?= Forms::inputText('phone', $user->phone,['class' => 'form-control']);?>
-    <p class="bg-danger">Выберите услуги которые предоставляете</p>
-    <?= Forms::checkboxList('services', $selectServ, ArrayHelper::map($services,'id','name'));?>
+
+    <?php if($user->status == 2 || $user->status == 3): ?>
+        <span>Ссылка на портфолио:</span>
+        <?= Forms::inputText('link',$user->link,['class'=>'form-control']); ?>
+        <p class="bg-danger">Выберите услуги которые предоставляете</p>
+        <?= Forms::checkboxList('services', $selectServ, ArrayHelper::map($services,'id','name'));?>
+    <?php endif; ?>
 
     <p class="bg-danger">Выберите свое месторасположение</p>
     <div><span>Регион:</span>
