@@ -238,4 +238,11 @@
       float: left;
       width: 100%; }
 
+.my-service-box {
+  padding-top: 20px;
+  padding-left: 20px; }
+
+.add-service-box {
+  padding-top: 30px; }
+
 /*# sourceMappingURL=style.css.map */

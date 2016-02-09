@@ -5,6 +5,7 @@ use lib\helpers\Cookie;
 use lib\helpers\Forms;
 use models\GeobaseCity;
 use models\GeobaseRegion;
+use models\Services;
 use models\User;
 
 /**
@@ -58,6 +59,13 @@ class Profile extends Controller
     public function actionView_master(){
         $this->app->parser->render('view_master', [
             'user_id' => $_GET['id']
+        ]);
+    }
+
+    public function actionAdd_service(){
+        $services = new Services();
+        $this->app->parser->render('add_service', [
+            'services' => $services->find()->all()
         ]);
     }
 

@@ -5,10 +5,10 @@ namespace lib\helpers;
 class Forms
 {
     /**
-     * Начало формы
-     * @param bool|false $options array Опции
-     * @param $method string Метод
-     * @param $action string Экшен
+     * пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+     * @param bool|false $options array пїЅпїЅпїЅпїЅпїЅ
+     * @param $method string пїЅпїЅпїЅпїЅпїЅ
+     * @param $action string пїЅпїЅпїЅпїЅпїЅ
      * @return string
      */
     public static function begin($options = false, $method = 'POST', $action = ''){
@@ -17,7 +17,7 @@ class Forms
     }
 
     /**
-     * Конец формы
+     * пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
      * @return string
      */
     public static function end(){
@@ -25,7 +25,7 @@ class Forms
     }
 
     /**
-     * Выпадающий список
+     * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
      * @param $name string
      * @param $selected integer
      * @param $data array
@@ -119,6 +119,11 @@ class Forms
     public static function textarea($name,$value = '', $options = false){
         $op = self::getOptions($options);
         return "<textarea name='$name' $op>$value</textarea>";
+    }
+
+    public static function label($value, $for, $options = false){
+        $op = self::getOptions($options);
+        return "<label for='$for' $op>$value</label>";
     }
 
     /**
