@@ -94,7 +94,7 @@ class Forms
 
     /**
      * @param $name
-     * @param bool|integer $value
+     * @param bool|integer|array $value
      * @param $data
      * @param bool|array $options
      * @return string
@@ -104,7 +104,7 @@ class Forms
         $html = '';
         //in_array()
         foreach ($data as $key => $val) {
-            $ch = ($key == $value) ?  'checked' : '';
+            $ch = (in_array($key, $value)) ?  'checked' : '';
             $html .= "<input name='".$name."[]' $ch type='checkbox' value='$key' $op>$val";
         }
         return $html;

@@ -29,19 +29,27 @@ class Profile extends Controller
         $regionAll = $region->find()->orderBy('name', 'ASC')->all();
         $services = new Services();
         $serv = $services->find()->all();
+        $usServ = new UserServices();
+        $usServAll = $usServ->find()->where(['user_id'=>$user->id])->all();
+        $usServAllArr = [];
+        foreach ($usServAll as $us) {
+            $usServAllArr[] = $us['service_id'];
+        }
+
+
         $this->app->parser->render('profile',
             [
                 'user' => $user,
                 'regionAll' => $regionAll,
                 'services'=>$serv,
+                'usServ' => $usServ,
+                'selectServ'=>$usServAllArr,
             ]);
 
     }
 
     public function actionSave_profile(){
         if(isset($_POST['saveProfile'])){
-
-            \lib\helpers\Debug::prn($_POST);
             $user = new User();
             $usServ = new UserServices();
             $vk_id = Cookie::get('vk_id');
@@ -63,7 +71,7 @@ class Profile extends Controller
                 $usServ->service_id = $serv;
                 $usServ->save();
             }
-           // header( 'Location: /vk2/office/my', true, 302 );
+            header( 'Location: /vk2/office/my', true, 302 );
         }
         else{
             \lib\helpers\Header::redirect('/vk2/profile/my', true, 302);
