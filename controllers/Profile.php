@@ -5,6 +5,7 @@ use lib\helpers\Cookie;
 use lib\helpers\Forms;
 use models\GeobaseCity;
 use models\GeobaseRegion;
+use models\Services;
 use models\User;
 
 /**
@@ -24,11 +25,13 @@ class Profile extends Controller
         $user->save();*/
         $region = new GeobaseRegion();
         $regionAll = $region->find()->orderBy('name', 'ASC')->all();
-
+        $services = new Services();
+        $serv = $services->find()->all();
         $this->app->parser->render('profile',
             [
                 'user' => $user,
                 'regionAll' => $regionAll,
+                'services'=>$serv,
             ]);
 
     }
