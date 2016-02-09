@@ -8,6 +8,7 @@ use models\GeobaseRegion;
 use models\Services;
 use models\SubServices;
 use models\User;
+use models\UserServices;
 
 /**
  * Created by PhpStorm.
@@ -39,15 +40,30 @@ class Profile extends Controller
 
     public function actionSave_profile(){
         if(isset($_POST['saveProfile'])){
+
+            \lib\helpers\Debug::prn($_POST);
             $user = new User();
+            $usServ = new UserServices();
             $vk_id = Cookie::get('vk_id');
+
+
+
             $user->find()->where(['vk_id' => $vk_id])->one();
+            $usServ->deleteByField('user_id',$user->id);
             $user->region_id = $_POST['region_id'];
             $user->city_id = $_POST['city_id'];
             $user->email = $_POST['email'];
             $user->phone = $_POST['phone'];
             $user->save();
-            header( 'Location: /vk2/office/my', true, 302 );
+
+            foreach($_POST['services'] as $serv){
+
+                \lib\helpers\Debug::prn($serv);
+                $usServ->user_id = $user->id;
+                $usServ->service_id = $serv;
+                $usServ->save();
+            }
+           // header( 'Location: /vk2/office/my', true, 302 );
         }
         else{
             \lib\helpers\Header::redirect('/vk2/profile/my', true, 302);
