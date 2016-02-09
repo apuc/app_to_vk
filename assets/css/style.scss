@@ -240,6 +240,7 @@
 .my-service-box {
   padding-top: 20px;
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 .add-service-box {
@@ -254,5 +255,7 @@
   display: block;
   float: left;
   width: 100%;
-  background-color: #4cae4c;
+  background-color: rgba(171, 255, 103, 0.54);
+  margin: 10px;
+  border-radius: 3px;
 }

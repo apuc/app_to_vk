@@ -3,6 +3,7 @@ use lib\Controller;
 use lib\helpers\ArrayHelper;
 use lib\helpers\Cookie;
 use lib\helpers\Forms;
+use lib\helpers\Header;
 use models\GeobaseCity;
 use models\GeobaseRegion;
 use models\Services;
@@ -66,7 +67,7 @@ class Profile extends Controller
            // header( 'Location: /vk2/office/my', true, 302 );
         }
         else{
-            \lib\helpers\Header::redirect('/vk2/profile/my', true, 302);
+            Header::redirect('/vk2/profile/my', true, 302);
         }
 
     }
@@ -86,7 +87,18 @@ class Profile extends Controller
             $sub->save();
             $msg = "Услуга добавленна";
         }
-        $this->app->parser->render('my_service', ['msg'=>$msg]);
+        $sub = new SubServices();
+
+        $this->app->parser->render('my_service', [
+            'msg'=>$msg,
+            'sub' => $sub->find()->all(),
+        ]);
+    }
+
+    public function actionDel_sub(){
+        $sub = new SubServices();
+        $sub->deleteAll($_GET['id']);
+        Header::redirect('/vk2/profile/my_services',true);
     }
 
     public function actionView_master(){
