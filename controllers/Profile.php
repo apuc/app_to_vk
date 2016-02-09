@@ -52,7 +52,7 @@ class Profile extends Controller
     }
 
     public function actionMy_services(){
-        
+        $this->app->parser->render('my_service');
     }
 
     public function actionView_master(){
