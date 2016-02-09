@@ -102,6 +102,7 @@ class Forms
     public static function checkboxList($name, $value = false, $data, $options = false){
         $op = self::getOptions($options);
         $html = '';
+        //in_array()
         foreach ($data as $key => $val) {
             $ch = ($key == $value) ?  'checked' : '';
             $html .= "<input name='".$name."[]' $ch type='checkbox' value='$key' $op>$val";

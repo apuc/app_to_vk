@@ -44,7 +44,7 @@ class UserServices extends Model
      */
     public function rules(){
         return [
-            [['id','user_id', 'service_id'], 'required'],
+            [['user_id', 'service_id'], 'required'],
             [['id','user_id', 'service_id'], 'integer'],
         ];
     }
