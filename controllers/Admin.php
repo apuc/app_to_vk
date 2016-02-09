@@ -39,13 +39,25 @@ class Admin extends Controller
 
     public function actionView_user(){
         $user = new User();
-        $user->find()->where(['vk_id' => Cookie::get('vk_id')])->one();
+        /*$user->find()->where(['vk_id' => Cookie::get('vk_id')])->one();*/
         $viewUser = $user->find()->where(['id'=>$_GET['id']])->one();
+        $region = new \models\GeobaseRegion();
+        $cyti = new \models\GeobaseCity();
+        $regionUser = $region->find()->where(['id' => $viewUser->region_id])->one();
+        $cytiUser = $cyti->find()->where(['id' => $viewUser->cyti_id])->one();
         $this->app->parser->render('view_user',
             [
-                'user' => $user,
                 'viewUser' => $viewUser,
+                'regionUser' => $regionUser,
+                'cytiUser' => $cytiUser,
             ], true);
+    }
+
+    public function actionEdit_status(){
+        $user = new User;
+        $user->find()->where(['id'=>$_POST['userID']])->one();
+        $user->status = $_POST['status'];
+        $user->save();
     }
 
 }

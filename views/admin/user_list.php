@@ -27,12 +27,13 @@ echo  MainAdminMenu::run();
             <td><?= $us['last_name']; ?></td>
             <td><?= $us['vk_id']; ?></td>
             <td><?= date('d-m-Y',$us['dt_add']); ?></td>
-            <td><?php
-                switch($us['status']){
+            <td><?= \lib\helpers\Forms::dropDownList('status',$us['status'],['1'=>'Клиент','2'=>'Мастер','3'=>'Админ'],['class'=>'form-control status','userId'=>$us->id]);
+
+               /* switch($us['status']){
                     case 1: echo 'Клиент';break;
                     case 2: echo 'Мастер';break;
                     case 3: echo 'Админ';break;
-                } ?></td>
+                } */?></td>
             <td><a class="admin_view" href="/vk2/admin/view_user/?id=<?= $us['id']?>"></a>
                <!-- <a class="admin_edit" href="/vk2/admin/edit_user/?id=<?/*= $us['id']*/?>"></a>-->
                 <a class="admin_delete" href="/vk2/admin/delete_user/?id=<?= $us['id']?>"></a>
